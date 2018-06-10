@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--{load href="/static/js/jquery-3.3.1.js" /}
+    {load href="/static/js/bootstrap.min.js" /}
+    {load href="/static/css/bootstrap.min.css" /}-->
+    {js href="/static/js/jquery-3.3.1.js" /}
+    {js href="/static/js/bootstrap.min.js" /}
+    {js href="/static/js/toastr.js" /}
+    {css href="/static/css/bootstrap.min.css" /}
+    {css href="/static/css/toastr.css" /}
+</head>
+<body>
+    <!--{volist name="list" id="vo" offset="3" length="5"}
+        {$vo.u_id}:{$vo.u_name}<br/>
+    {/volist}-->
+    <!--{foreach $list as $vo}
+        {$vo.u_id}:{$vo.u_name}<br/>
+    {/foreach}
+    <hr>
+
+    {foreach name="list" id="vo"}
+        {$vo.u_id}:{$vo.u_name}<br/>
+    {/foreach}
+
+    <hr>
+    {foreach $list as $vo}
+        {$key}:{$vo.u_name}
+    {/foreach}-->
+
+    <!--{for start="1" end="100"}
+        {$i}
+    {/for}
+
+    <hr>
+    {eq name="a" value="3"}
+        相等
+    {else/}
+        不相等
+    {/eq}-->
+    <!--{compare name="a" value="3" type="gt"}
+        相等
+    {else/}
+        不相等
+    {/compare}-->
+    <div class="contain">
+        <div class="col-md-8">
+            <div class="btn btn-primary" onclick="javascript: toastr.info('你确定要退出吗')">测试按钮</div>
+            <input type="button" name="success" id="success" value="成功"/>
+
+            <input type="button" name="info" id="info" value="提示"/>
+
+            <input type="button" name="warning" id="warning" value="警告"/>
+
+            <input type="button" name="error" id="error" value="错误"/>
+
+            <input type="button" name="clear" id="clear" value="清除"/>
+        </div>
+    </div>
+
+    <div>
+
+    </div>
+
+    <script>
+        $(function () {
+            toastr.options = {
+                "closeButton": false,
+                'debug':false,
+                "positionClass": "toast-top-full-width",//弹出窗的位置
+                "showDuration": "300",//显示的动画时间
+                "hideDuration": "1000",//消失的动画时间
+                "timeOut": "5000", //展现时间
+                "extendedTimeOut": "1000",//加长展示时间
+                "showEasing": "swing",//显示时的动画缓冲方式
+                "hideEasing": "linear",//消失时的动画缓冲方式
+                "showMethod": "fadeIn",//显示时的动画方式
+                "hideMethod": "fadeOut" //消失时的动画方式
+            };
+
+            //成功提示绑定
+            $("#success").click(function(){
+                toastr.success("祝贺你成功了");
+                });
+
+
+            //信息提示绑定
+            $("#info").click(function(){
+                toastr.info("这是一个提示信息");
+                });
+
+            //敬告提示绑定
+            $("#warning").click(function(){
+                toastr.warning("警告你别来烦我了");
+                });
+
+            //错语提示绑定
+            $("#error").click(function(){
+                toastr.error("出现错误，请更改");
+                });
+
+            //清除窗口绑定
+            $("#clear").click(function(){
+                toastr.clear();
+                });
+        });
+    </script>
+
+</body>
+</html>

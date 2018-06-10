@@ -17,13 +17,24 @@
 </head>
 <body>
     <div class="system-message">
+
+        <!-- <?php
+            echo $code.'<hr>';
+            echo $data.'<hr>';
+            echo $msg.'<hr>';
+            echo $url.'<hr>';
+            echo $wait.'<hr>';
+        ?> -->
+
         <?php switch ($code) {?>
             <?php case 1:?>
-            <h1>:)</h1>
+             <h1>:)</h1>
+            <!-- <img src="/static/images/success.png" width="48px" height="48px" /> -->
             <p class="success"><?php echo(strip_tags($msg));?></p>
             <?php break;?>
             <?php case 0:?>
-            <h1>:(</h1>
+             <h1>:(</h1>
+            <!-- <img src="/static/images/error.png" width="48px" height="48px" /> -->
             <p class="error"><?php echo(strip_tags($msg));?></p>
             <?php break;?>
         <?php } ?>

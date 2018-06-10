@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    Name: {$data.name|md5}<br/>
+    Email: {$data.email|default='这家伙很懒什么都没有留下'}<br/>
+    {$Think.get.name|default='名称为空'}
+    {$a+$b}
+    {$b-$a}
+    {$a*$b}
+    {$b/$a}
+    {$Think.server.sript_name}
+    {$Think.session.user_id}
+</body>
+</html>

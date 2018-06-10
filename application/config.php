@@ -141,8 +141,8 @@ return [
     // 视图输出字符串内容替换
     'view_replace_str'       => [],
     // 默认跳转页面对应的模板文件
-    'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
-    'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
+    'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'success.tpl',
+    'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'error.tpl',
 
     // +----------------------------------------------------------------------
     // | 异常及错误设置
@@ -177,6 +177,14 @@ return [
     'trace'                  => [
         // 内置Html Console 支持扩展
         'type' => 'Html',
+        /*'trace_tabs' => [
+            'base' => '基本',
+            'file' => '文件',
+            'info' => '流程',
+            'error|notice' => '错误',
+            'sql' => 'SQL',
+            'debug|log' => '调试'
+        ]*/
     ],
 
     // +----------------------------------------------------------------------
@@ -185,7 +193,7 @@ return [
 
     'cache'                  => [
         // 驱动方式
-        'type'   => 'File',
+        'type'   => 'Redis',
         // 缓存保存目录
         'path'   => CACHE_PATH,
         // 缓存前缀
